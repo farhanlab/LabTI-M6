@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QVBoxLayout,
     QPushButton, QLineEdit, QLabel,
-    QListWidget, QMessageBox
+    QListWidget, QMessageBox, QFormLayout
 )
 from models import (
     get_all_mahasiswa, add_mahasiswa_db, delete_mahasiswa_db,
@@ -26,7 +26,7 @@ class MahasiswaApp(QWidget):
         self.load_button = QPushButton("Refresh")
 
         layout = QVBoxLayout()
-        form_layout = QVBoxLayout()
+        form_layout = QFormLayout()  # Changed from QVBoxLayout to QFormLayout
 
         form_layout.addRow(QLabel("Nama"), self.nama_input)
         form_layout.addRow(QLabel("NIM"), self.nim_input)
